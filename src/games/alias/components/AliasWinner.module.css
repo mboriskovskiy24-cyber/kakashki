@@ -1,0 +1,44 @@
+.card {
+  padding: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+}
+
+.card h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+}
+
+.subtitle {
+  margin: 0.9rem 0 0;
+  max-width: 44ch;
+  color: var(--text-muted);
+}
+
+.scoreWrap {
+  margin-top: 1.5rem;
+}
+
+.actions {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 800;
+}

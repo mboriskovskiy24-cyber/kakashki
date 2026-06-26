@@ -1,0 +1,215 @@
+.page {
+  width: min(calc(100% - 2rem), var(--container));
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.4rem;
+  min-height: 300px;
+  border-radius: 36px;
+  background:
+    linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(250, 204, 21, 0.12)),
+    var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: floatIn var(--transition-slow);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 5.2rem);
+  line-height: 0.94;
+  max-width: 10ch;
+  text-wrap: balance;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: min(140px, 42%);
+  height: 6px;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), rgba(250, 204, 21, 0.2));
+}
+
+.subtitle {
+  margin: 1.1rem 0 0;
+  max-width: 54ch;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  padding-left: 1rem;
+  border-left: 3px solid rgba(250, 204, 21, 0.45);
+}
+
+.orb {
+  position: absolute;
+  right: -70px;
+  bottom: -50px;
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), transparent 28%),
+    linear-gradient(135deg, rgba(250, 204, 21, 0.95), rgba(124, 58, 237, 0.55));
+  filter: blur(6px);
+  opacity: 0.9;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.gameCard {
+  min-height: 300px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    rotate var(--transition);
+}
+
+.gameCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  rotate: -0.4deg;
+}
+
+.cardGlow {
+  height: 6px;
+}
+
+.cardContent {
+  padding: 1.35rem;
+}
+
+.cardContent h2 {
+  margin: 0.55rem 0;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.cardContent h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.75), rgba(250, 204, 21, 0.65));
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.cardContent p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.tag {
+  display: inline-flex;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.09);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin-top: 1rem !important;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.playLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.4rem;
+  min-height: 56px;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
+  color: var(--text-light);
+  font-weight: 800;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+  box-shadow: 0 14px 28px rgba(124, 58, 237, 0.28);
+}
+
+.playLink:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #8b5cf6 0%, var(--primary) 100%);
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding-top: 2.2rem;
+  }
+
+  .hero {
+    padding: 2.5rem;
+  }
+
+  .orb {
+    width: 320px;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}

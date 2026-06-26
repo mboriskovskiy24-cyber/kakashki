@@ -1,0 +1,89 @@
+.card {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+}
+
+.card h1,
+.revealCard h2 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.hiddenState,
+.revealCard,
+.spyCard,
+.roleCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.hiddenState {
+  margin-top: 1.3rem;
+  animation: revealFade var(--transition-slow);
+}
+
+.spyCard,
+.roleCard {
+  margin-top: 1.3rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 24px 44px rgba(12, 5, 25, 0.14);
+  animation: revealCardIn var(--transition-slow);
+}
+
+.spyCard {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.14), rgba(124, 58, 237, 0.16));
+}
+
+.roleCard {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.14), rgba(124, 58, 237, 0.1));
+}
+
+.spyBadge,
+.roleLabel {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.location,
+.role {
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
+  font-family: var(--font-display);
+}
+
+@keyframes revealFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealCardIn {
+  0% {
+    opacity: 0;
+    transform: perspective(900px) rotateX(-10deg) translateY(16px) scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) translateY(0) scale(1);
+  }
+}

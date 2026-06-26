@@ -1,0 +1,36 @@
+.board {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.active {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(250, 204, 21, 0.2));
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+.rank,
+.score {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.name {
+  display: block;
+}
+
+.caption {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}

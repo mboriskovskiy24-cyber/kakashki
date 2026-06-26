@@ -1,0 +1,213 @@
+.card {
+  padding: 1.2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+}
+
+.card h1,
+.sectionHeader h2 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.description,
+.empty {
+  color: var(--text-muted);
+}
+
+.grid,
+.optionsGrid,
+.actions,
+.customList {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  margin-top: 1.35rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.infoField,
+.field span {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.field select,
+.customRow input {
+  min-height: 52px;
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  background: rgba(124, 58, 237, 0.04);
+  color: var(--text-dark);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition),
+    background var(--transition);
+}
+
+.field select:focus,
+.customRow input:focus {
+  outline: none;
+  border-color: rgba(124, 58, 237, 0.34);
+  box-shadow:
+    0 0 0 4px rgba(124, 58, 237, 0.08),
+    0 12px 30px rgba(124, 58, 237, 0.08);
+  transform: translateY(-1px);
+}
+
+.infoField {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(250, 204, 21, 0.08)),
+    rgba(124, 58, 237, 0.04);
+  border: 1px solid rgba(124, 58, 237, 0.14);
+  box-shadow: 0 14px 28px rgba(12, 5, 25, 0.06);
+}
+
+.infoField strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.infoField small {
+  color: var(--text-muted);
+}
+
+.switchField {
+  align-content: start;
+}
+
+.toggle {
+  min-height: 52px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(124, 58, 237, 0.06));
+  color: var(--primary);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.toggleOn {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.22), rgba(234, 179, 8, 0.18));
+  color: #8a5a00;
+}
+
+.section {
+  margin-top: 1.4rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.9rem;
+}
+
+.sectionHeader span {
+  color: var(--text-muted);
+}
+
+.optionCard {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: var(--radius-md);
+  background: rgba(124, 58, 237, 0.04);
+  color: var(--text-dark);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.optionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.26);
+}
+
+.optionCard strong,
+.optionCard span {
+  display: block;
+}
+
+.optionCard span {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.optionCardSelected {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(250, 204, 21, 0.12));
+  border-color: rgba(124, 58, 237, 0.35);
+}
+
+.customRow {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.customItem {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  animation: riseIn var(--transition-slow);
+}
+
+.actions {
+  margin-top: 1.2rem;
+}
+
+.error {
+  color: var(--danger);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid,
+  .optionsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customRow {
+    grid-template-columns: 1fr auto;
+  }
+
+  .customItem {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}

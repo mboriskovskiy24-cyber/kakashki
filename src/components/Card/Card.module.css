@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+  --text: var(--text-dark);
+  --text-muted: rgba(31, 41, 55, 0.7);
+  --bg-soft: rgba(124, 58, 237, 0.05);
+  --surface: rgba(124, 58, 237, 0.08);
+  --surface-strong: rgba(124, 58, 237, 0.12);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+  animation: cardFadeIn var(--transition-slow);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 56px rgba(12, 5, 25, 0.18);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 30%, transparent 70%, rgba(124, 58, 237, 0.04));
+  pointer-events: none;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.992);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

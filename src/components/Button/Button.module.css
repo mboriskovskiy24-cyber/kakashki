@@ -1,0 +1,104 @@
+.button {
+  position: relative;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.35rem;
+  color: var(--text-light);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    opacity var(--transition),
+    filter var(--transition);
+  min-height: 56px;
+  will-change: transform;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  transform-origin: center;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.05);
+}
+
+.button:active {
+  transform: translateY(1px) scale(0.975);
+  transition-duration: 90ms;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(124, 58, 237, 0.18),
+    0 14px 26px rgba(17, 24, 39, 0.16);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  box-shadow: 0 16px 30px rgba(250, 204, 21, 0.3);
+  color: var(--text-dark);
+}
+
+.secondary {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.42), rgba(91, 33, 182, 0.28));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 12px 24px rgba(124, 58, 237, 0.18);
+  color: var(--text-light);
+}
+
+.ghost {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.28), rgba(234, 179, 8, 0.14));
+  box-shadow:
+    inset 0 0 0 1px rgba(250, 204, 21, 0.26),
+    0 12px 24px rgba(250, 204, 21, 0.16);
+  color: #724c00;
+}
+
+.danger {
+  background: linear-gradient(135deg, var(--danger), #dc2626);
+  box-shadow: 0 12px 24px rgba(239, 68, 68, 0.22);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: auto;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left var(--transition-slow);
+  pointer-events: none;
+}
+
+.button:hover::after {
+  left: 135%;
+}
+
+.secondary::before,
+.ghost::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+}

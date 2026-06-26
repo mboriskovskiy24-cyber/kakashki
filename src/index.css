@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'Manrope', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  --font-display: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  --background: #241437;
+  --card: #ffffff;
+  --primary: #7c3aed;
+  --accent: #facc15;
+  --accent-hover: #eab308;
+  --text-dark: #1f2937;
+  --text-light: #ffffff;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --bg: var(--background);
+  --bg-elevated: rgba(255, 255, 255, 0.1);
+  --bg-soft: rgba(255, 255, 255, 0.08);
+  --surface: rgba(255, 255, 255, 0.12);
+  --surface-strong: rgba(255, 255, 255, 0.18);
+  --text: var(--text-light);
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --shadow-lg: 0 28px 80px rgba(12, 5, 25, 0.42);
+  --shadow-md: 0 18px 40px rgba(12, 5, 25, 0.32);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --container: 1180px;
+  --transition: 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slower: 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  background:
+    radial-gradient(circle at top left, rgba(250, 204, 21, 0.24), transparent 26%),
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.34), transparent 36%),
+    linear-gradient(180deg, #241437 0%, #1d112c 52%, #130a21 100%);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: transparent;
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  animation: pageFadeIn var(--transition-slow);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 42%),
+    radial-gradient(circle at 20% 20%, rgba(250, 204, 21, 0.1), transparent 24%);
+  opacity: 0.8;
+  animation: ambientShift 14s ease-in-out infinite;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ambientShift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.78;
+  }
+
+  50% {
+    transform: translate3d(1.5%, -1.5%, 0) scale(1.03);
+    opacity: 0.96;
+  }
+}
