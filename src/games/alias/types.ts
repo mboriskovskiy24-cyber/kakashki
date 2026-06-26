@@ -4,6 +4,7 @@ export type AliasThemeId =
   | 'nature'
   | 'cs2'
   | 'sex'
+  | 'genitals'
   | 'geography'
 
 export interface AliasTheme {
